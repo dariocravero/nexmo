@@ -1,0 +1,41 @@
+omg: 1 
+
+info:
+  version: 1.0.0
+  title: Nextmo service
+  description: Use Nextmo service
+
+actions:
+  sendSms:
+    help: Sends an SMS
+    http:
+      method: post
+      path: /sendSms
+      port: 3000
+    arguments:
+      to:
+        type: string
+        required: true
+        in: requestBody
+      from:
+        type: string
+        required: true
+        in: requestBody
+      text:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: string
+
+lifecycle:
+  startup:
+    command: ["yarn", "start"]
+
+environment:
+  apiKey:
+    type: string
+    required: true
+  apiSecret:
+    type: string
+    required: true
