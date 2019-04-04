@@ -2,8 +2,8 @@ omg: 1
 
 info:
   version: 1.0.0
-  title: Nextmo service
-  description: Use Nextmo service
+  title: Nexmo service
+  description: Use Nexmo service
 
 actions:
   sendSms:
@@ -33,9 +33,9 @@ lifecycle:
     command: ["yarn", "start"]
 
 environment:
-  apiKey:
+  API_KEY:
     type: string
     required: true
-  apiSecret:
+  API_SECRET:
     type: string
     required: true

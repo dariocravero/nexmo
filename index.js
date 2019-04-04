@@ -1,7 +1,7 @@
 let { json, send } = require('micro')
 let fetch = require('node-fetch')
 
-let NEXTMO_API = 'https://rest.nexmo.com/sms/json'
+let NEXMO_API = 'https://rest.nexmo.com/sms/json'
 
 module.exports = async (req, res) => {
   console.log(req.url, req.method)
@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
 }
 
 async function sendSms({ to, from, text }) {
-  let res = await fetch(NEXTMO_API, {
+  let res = await fetch(NEXMO_API, {
     method: 'POST',
     body: JSON.stringify({
       api_key: process.env.apiKey,
